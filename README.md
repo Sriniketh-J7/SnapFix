@@ -1,21 +1,58 @@
-# SnapFix — AI-Powered Civic Issue Reporting Platform
+# 🏙️ SnapFix-  AI-Powered Civic Issue Reporting Platform
+A MERN-stack, AI application that allows citizens to report local civic issues (like potholes, waste, or broken infrastructure) with image uploads, live updates, and AI-based image classification.
+
+## 🌐 Live Demo
+🎥 **Demo:** [Watch on YouTube](https://youtu.be/UuZyAWHL5uk)
+
+
+🚀 **Deployed App:** [Try it Live](https://snapfix-rouge.vercel.app/)
+
+---
+## 🧠 AI Image Classification
+Images uploaded by users are sent to a gemini API.
+The model predicts issue type (e.g., pothole, garbage, sewage leak).
+The result is stored in MongoDB and shown in the report list.
+
+---
+
+## Features
+- AI image classification (Google Gemini)
+- Geo-nearest + workload-balanced technician assignment
+- Priority engine: baseScore + upvotes + age (Critical/High/Medium/Low)
+- Upvoting — community priority influence
+- 14-hour escalation cron
+- Priority queue (binary heap) for task sorting
+- TSP nearest-neighbour route optimization
+- City-wide issue map with radius filter and heatmap
+- Real-time Socket.io notifications for all three user types
+- Cloudinary image upload (report + resolution photos)
+---
+## 🧩 Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| Frontend | React, Javascript, Typescript, Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB (Mongoose ORM) |
+| Real-time | Socket.io |
+| Cloud Storage | Cloudinary |
+| AI Model | Gemini LLM API & Custom ML model (image classification using TensorFlow/PyTorch) |
+| Deployment | Vercel  |
+
+---
 
 ## Quick Start
-
-### Backend
-```bash
-cd backend
-cp .env.example .env    # fill in your values
-npm install
-npm run dev
+## ⚙️ Installation & Setup
 ```
-
-### Frontend
-```bash
-cd frontend
-cp .env.example .env    # fill in your values
+git clone https://github.com/Sriniketh-J7/SnapFix.git
+cd Snapfix/frontend
 npm install
 npm run dev
+
+cd Snapfix/backend
+npm install
+npm run dev
+```dev
 ```
 
 ## Environment Variables
@@ -48,15 +85,3 @@ POST /api/department/signup
 { "deptName": "Water", "deptHeadName": "your_name", "password": "your_password" }
 ```
 Departments: Water, Electrical, Civil, Sanitation, Animal Control
-
-## Features
-- AI image classification (Google Gemini)
-- Geo-nearest + workload-balanced technician assignment
-- Priority engine: baseScore + upvotes + age (Critical/High/Medium/Low)
-- Upvoting — community priority influence
-- 14-hour escalation cron
-- Priority queue (binary heap) for task sorting
-- TSP nearest-neighbour route optimization
-- City-wide issue map with radius filter and heatmap
-- Real-time Socket.io notifications for all three user types
-- Cloudinary image upload (report + resolution photos)

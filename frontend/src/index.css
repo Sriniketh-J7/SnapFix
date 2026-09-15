@@ -1,0 +1,52 @@
+/* Google Font - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap');
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fc;
+  color: #111827;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.18s ease-out forwards; }
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in { animation: slide-in 0.22s ease-out forwards; }
+
+/* MapLibre popup */
+.maplibregl-popup-content {
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+  font-family: 'Inter', sans-serif !important;
+  border: 1px solid #f0f0f0 !important;
+}
+.maplibregl-popup-tip { border-top-color: white !important; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slide-up 0.25s ease-out forwards; }
+
+/* Hide scrollbar but keep scroll */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
